@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Private Preview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+html,body{
+width:100%;
+height:100%;
+background:#060608;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+color:#EDEDED;
+overflow:hidden;
+}
+
+/* CINEMATIC LIGHT */
+body::before{
+content:"";
+position:fixed;
+inset:-40%;
+background:
+radial-gradient(circle at 20% 20%, rgba(120,120,255,.10), transparent 30%),
+radial-gradient(circle at 80% 70%, rgba(218,165,32,.12), transparent 32%),
+radial-gradient(circle at 50% 50%, rgba(255,255,255,.025), transparent 45%);
+filter:blur(120px);
+animation:float 14s ease-in-out infinite alternate;
+}
+
+@keyframes float{
+to{transform:translateY(-120px)}
+}
+
+/* LAYOUT */
+.wrapper{
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px;
+position:relative;
+z-index:2;
+}
+
+.panel{
+width:100%;
+max-width:900px;
+padding:100px 110px;
+border-radius:28px;
+background:
+linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.01)),
+radial-gradient(circle at top, rgba(255,255,255,.07), transparent 65%);
+border:1px solid rgba(255,255,255,.12);
+box-shadow:0 80px 200px rgba(0,0,0,.95);
+backdrop-filter: blur(22px);
+animation:reveal .9s cubic-bezier(.2,.65,.25,1) both;
+}
+
+/* REVEAL */
+@keyframes reveal{
+from{opacity:0;transform:scale(.94) translateY(50px)}
+to{opacity:1;transform:none}
+}
+
+/* TEXT SYSTEM */
+.label{
+letter-spacing:.5em;
+font-size:11px;
+color:rgba(255,255,255,.55);
+font-weight:600;
+margin-bottom:28px;
+}
+
+h1{
+font-size:62px;
+line-height:1.05;
+font-weight:700;
+letter-spacing:-.035em;
+margin-bottom:26px;
+background:linear-gradient(90deg,#FFFFFF,#CFCFCF,#F3D07A);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.copy{
+font-size:20px;
+line-height:1.75;
+max-width:560px;
+color:rgba(255,255,255,.78);
+}
+
+/* DIVIDER */
+.rule{
+margin:64px 0 44px;
+height:1px;
+background:linear-gradient(to right, transparent, rgba(255,255,255,.5), transparent);
+}
+
+/* SIGNATURE */
+.signature{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.mark{
+width:46px;height:46px;
+border-radius:100%;
+border:1px solid rgba(255,255,255,.35);
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+}
+
+.name{font-weight:600}
+.title{
+font-size:12px;
+letter-spacing:.32em;
+opacity:.6;
+margin-top:4px;
+}
+
+/* FOOTER */
+.footer{
+position:fixed;
+bottom:26px;
+width:100%;
+text-align:center;
+font-size:10px;
+letter-spacing:.48em;
+color:rgba(255,255,255,.4);
+}
+
+/* MOBILE FIX — REAL PREMIUM */
+@media(max-width:720px){
+
+.wrapper{padding:26px}
+
+.panel{
+padding:70px 36px;
+border-radius:22px;
+}
+
+.label{
+font-size:9px;
+margin-bottom:18px;
+}
+
+h1{
+font-size:40px;
+margin-bottom:18px;
+}
+
+.copy{
+font-size:16px;
+line-height:1.7;
+}
+
+.rule{
+margin:46px 0 32px;
+}
+
+.signature{
+justify-content:center;
+text-align:left;
+}
+
+.footer{
+font-size:9px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+  <div class="panel">
+
+    <div class="label">PRIVATE ACCESS MODE</div>
+
+    <h1>Temporarily<br>In Refinement</h1>
+
+    <p class="copy">
+      We are quietly perfecting the experience behind the scenes.  
+      Precision takes time and the result will be worth it.
+    </p>
+
+    <div class="rule"></div>
+
+    <div class="signature">
+      <div class="mark">RM</div>
+      <div>
+        <div class="name">R. Manna</div>
+        <div class="title">EXECUTIVE DIRECTOR</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">© 2025 Dripngrid — All Rights Reserved</div>
+
+</body>
+</html>
